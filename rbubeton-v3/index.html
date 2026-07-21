@@ -176,6 +176,19 @@ section .wrap{background:rgba(10,12,16,.32);backdrop-filter:blur(8px);-webkit-ba
   </div>
 </section>
 
+<section style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="accent-line"></div>
+    <h2 class="sec-title">Завод в цифрах</h2>
+    <div class="nums" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
+      <div class="step" style="padding:28px;text-align:center"><b data-cnt="1951" style="display:block;font-size:2.4rem;font-weight:800;color:var(--accent)">0</b><span style="color:#c9ced6">довольных клиентов</span></div>
+      <div class="step" style="padding:28px;text-align:center"><b data-cnt="11" style="display:block;font-size:2.4rem;font-weight:800;color:var(--accent)">0</b><span style="color:#c9ced6">миксеров в автопарке</span></div>
+      <div class="step" style="padding:28px;text-align:center"><b data-cnt="29587533" data-suf="+" style="display:block;font-size:2.4rem;font-weight:800;color:var(--accent)">0</b><span style="color:#c9ced6">м³ бетона произведено</span></div>
+      <div class="step" style="padding:28px;text-align:center"><b data-cnt="24" data-suf="/7" style="display:block;font-size:2.4rem;font-weight:800;color:var(--accent)">0</b><span style="color:#c9ced6">производство без пауз</span></div>
+    </div>
+  </div>
+</section>
+
 <section id="steps">
   <div class="wrap reveal">
     <div class="accent-line"></div>
@@ -220,6 +233,17 @@ section .wrap{background:rgba(10,12,16,.32);backdrop-filter:blur(8px);-webkit-ba
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script>
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,end=+el.dataset.cnt,suf=el.dataset.suf||'',t0=performance.now();
+  const tick=t=>{const p=Math.min((t-t0)/1600,1);
+    el.textContent=Math.round(end*(1-Math.pow(1-p,3))).toLocaleString('ru-RU')+suf;
+    p<1&&requestAnimationFrame(tick)};
+  requestAnimationFrame(tick);
+}),{threshold:.5});
+document.querySelectorAll('[data-cnt]').forEach(el=>cio.observe(el));
 </script>
 </body>
 </html>
