@@ -37,16 +37,21 @@
 html{scroll-behavior:smooth}
 body{
   font-family:'Onest',system-ui,sans-serif;color:var(--txt);line-height:1.6;
-  background-color:var(--bg);
-  /* миллиметровка: тонкая сетка 16px + толстая 80px, 0 КБ картинок */
+  background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased
+}
+/* ── живое видео под всей страницей: сайт «летит» над ним ──────────────── */
+.bgvid{position:fixed;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:-3;
+  filter:contrast(1.12) saturate(.8) brightness(.72)}
+.bgshade{position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:linear-gradient(rgba(8,14,22,.34),rgba(8,14,22,.6))}
+/* миллиметровка поверх видео, а не под текстом секций */
+.bggrid{position:fixed;inset:0;z-index:-1;pointer-events:none;
   background-image:
     linear-gradient(var(--line-thin) 1px,transparent 1px),
     linear-gradient(90deg,var(--line-thin) 1px,transparent 1px),
     linear-gradient(var(--line) 1px,transparent 1px),
     linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:16px 16px,16px 16px,80px 80px,80px 80px;
-  overflow-x:hidden;-webkit-font-smoothing:antialiased
-}
+  background-size:16px 16px,16px 16px,80px 80px,80px 80px}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 .mono{font-family:'JBMono',ui-monospace,monospace;text-transform:uppercase;
@@ -64,16 +69,11 @@ header{position:sticky;top:0;z-index:60;background:rgba(11,20,32,.9);
 .nav-phone{font-family:'JBMono',monospace;font-weight:700;font-size:.92rem;white-space:nowrap}
 
 /* ── герой ─────────────────────────────────────────────────────────────── */
-.hero{position:relative;min-height:92svh;display:flex;align-items:flex-end;
-  overflow:hidden;border-bottom:1px solid var(--line)}
-.hero-media{position:absolute;inset:0;z-index:0}
-.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;
-  filter:contrast(1.12) saturate(.84) brightness(.9)}
-/* дуотон: тени уходят в синий, света — в акцент */
-.hero-media::before{content:"";position:absolute;inset:0;background:#0a1a2e;mix-blend-mode:lighten;opacity:.55}
-.hero-media::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(11,20,32,.25) 0%,rgba(11,20,32,.55) 55%,var(--bg) 100%)}
-.hero .wrap{position:relative;z-index:2;padding-bottom:54px;padding-top:120px}
+/* герой без своей подложки — под ним видно живое фоновое видео */
+.hero{position:relative;min-height:94svh;display:flex;align-items:flex-end;padding:0}
+.hero .wrap{position:relative;z-index:2;padding:120px 24px 54px;
+  background:none;backdrop-filter:none;border:none}
+.hero .wrap::before,.hero .wrap::after{display:none}
 .kick{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
 .kick b{font-family:'JBMono',monospace;font-weight:600;font-size:.72rem;letter-spacing:.14em;
   text-transform:uppercase;color:#eafcfd;background:rgba(7,15,24,.72);backdrop-filter:blur(4px);
@@ -102,7 +102,9 @@ h1 em{font-style:normal;color:var(--acc)}
 .rise-stick{position:sticky;top:0;height:100svh;overflow:hidden}
 .rise canvas{width:100%;height:100%;display:block;filter:contrast(1.1) saturate(.86)}
 .rise-shade{position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(90deg,rgba(7,13,21,.82) 0%,rgba(7,13,21,.42) 42%,transparent 68%)}
+  background:
+    linear-gradient(180deg,rgba(7,13,21,.86) 0%,rgba(7,13,21,.35) 22%,transparent 40%),
+    linear-gradient(90deg,rgba(7,13,21,.82) 0%,rgba(7,13,21,.42) 42%,transparent 68%)}
 .rise-vign{position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse at center,transparent 38%,rgba(0,0,0,.5) 100%)}
 .rise-hd{position:absolute;left:0;right:0;top:62px;padding:22px 24px 26px;z-index:3}
@@ -121,11 +123,19 @@ h1 em{font-style:normal;color:var(--acc)}
   width:1px;height:44vh;background:var(--line)}
 .rise-prog i{position:absolute;left:-1px;top:0;width:3px;background:var(--acc);height:0}
 
-/* ── общие секции ──────────────────────────────────────────────────────── */
-section{padding:88px 0;border-bottom:1px solid var(--line)}
+/* ── общие секции: воздушные блоки поверх видео ────────────────────────── */
+section{padding:34px 0}
+section > .wrap{background:rgba(10,17,27,.4);backdrop-filter:blur(9px);
+  -webkit-backdrop-filter:blur(9px);border:1px solid var(--line);
+  padding:52px 44px;position:relative}
+/* уголки-засечки как на чертеже */
+section > .wrap::before,section > .wrap::after{content:"";position:absolute;
+  width:12px;height:12px;border:1px solid var(--acc);opacity:.6}
+section > .wrap::before{left:-1px;top:-1px;border-right:none;border-bottom:none}
+section > .wrap::after{right:-1px;bottom:-1px;border-left:none;border-top:none}
 .sec-h{display:flex;align-items:baseline;gap:16px;margin-bottom:12px}
 .sec-h h2{font-size:clamp(1.6rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.03em}
-.sec-sub{color:var(--mut);max-width:62ch;margin-bottom:38px}
+.sec-sub{color:#b9c6d6;max-width:62ch;margin-bottom:38px}
 
 /* спецификация парка */
 .spec{width:100%;border-collapse:collapse;font-size:.95rem}
@@ -142,30 +152,54 @@ section{padding:88px 0;border-bottom:1px solid var(--line)}
 /* карточки услуг */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:1px;
   background:var(--line);border:1px solid var(--line)}
-.card{background:var(--bg);padding:0 0 26px;transition:.25s}
-.card:hover{background:var(--bg2)}
-.card .ph{width:100%;height:180px;object-fit:cover;display:block;
+.card{background:rgba(9,15,24,.62);padding:0 0 26px;transition:.25s;overflow:hidden}
+.card:hover{background:rgba(14,24,38,.78)}
+.card .ph{width:100%;height:180px;object-fit:cover;display:block;transition:transform .7s ease;
   filter:contrast(1.08) saturate(.8) brightness(.92)}
+.card:hover .ph{transform:scale(1.06)}
 .card h3{font-size:1.02rem;margin:20px 24px 8px;letter-spacing:-.01em}
 .card p{color:var(--mut);font-size:.92rem;margin:0 24px}
 
-/* объекты и партнёры — те же классы, что генерит build.py */
-.objs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;
+/* объекты: фото ЖК + подпись, медленный наезд при наведении */
+.objs{display:grid;grid-template-columns:repeat(auto-fit,minmax(292px,1fr));gap:1px;
   background:var(--line);border:1px solid var(--line)}
-.obj{background:var(--bg);padding:26px 24px;transition:.2s}
-.obj:hover{background:var(--bg2)}
+.obj{background:rgba(9,15,24,.62);transition:.25s;overflow:hidden;position:relative}
+.obj:hover{background:rgba(14,24,38,.8)}
+.obj-ph{position:relative;height:186px;overflow:hidden;background:#0a1220}
+.obj-ph img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:contrast(1.1) saturate(.78) brightness(.82);transition:transform 1.1s ease}
+.obj:hover .obj-ph img{transform:scale(1.09)}
+.obj-ph::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(9,15,24,.9) 100%)}
+.obj-tx{padding:22px 24px 26px}
 .obj .when{font-family:'JBMono',monospace;font-size:.68rem;letter-spacing:.12em;
   text-transform:uppercase;color:var(--acc)}
 .obj b{display:block;margin:8px 0 6px;font-size:1.02rem}
 .obj p{color:var(--mut);font-size:.9rem}
+
+/* заказчики: бесконечная лента логотипов */
 .brands{display:flex;flex-wrap:wrap;gap:10px}
 .brand{font-family:'JBMono',monospace;font-size:.8rem;letter-spacing:.04em;
   border:1px solid var(--line);border-radius:2px;padding:11px 16px;color:#cad5e2}
+.tape{position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.tape-row{display:flex;width:max-content;gap:0;animation:tape 42s linear infinite}
+.tape:hover .tape-row{animation-play-state:paused}
+@keyframes tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.lg{flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  width:200px;height:96px;margin-right:14px;padding:16px 20px;
+  border:1px solid var(--line);background:rgba(255,255,255,.055)}
+.lg img{max-width:100%;max-height:100%;object-fit:contain;
+  filter:brightness(0) invert(1);opacity:.78;transition:.25s}
+.lg:hover img{opacity:1}
+.lg span{font-family:'JBMono',monospace;font-size:.76rem;letter-spacing:.06em;
+  text-align:center;color:#cad5e2}
 
 /* шаги */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;
   background:var(--line);border:1px solid var(--line);counter-reset:st}
-.step{background:var(--bg);padding:28px 24px}
+.step{background:rgba(9,15,24,.62);padding:28px 24px}
 .step::before{counter-increment:st;content:"[ 0" counter(st) " ]";display:block;
   font-family:'JBMono',monospace;font-size:.7rem;letter-spacing:.12em;color:var(--acc);margin-bottom:14px}
 .step h3{font-size:1rem;margin-bottom:6px}
@@ -203,7 +237,9 @@ footer{padding:26px 0 96px;color:var(--mut)}
 @media(max-width:860px){
   .nav-links{display:none}
   .cgrid{grid-template-columns:1fr;gap:32px}
-  section{padding:56px 0}
+  section{padding:18px 0}
+  section > .wrap{padding:34px 20px}
+  .lg{width:158px;height:80px}
   .sticky-cta{display:flex}
   .rise{height:340vh}
   .rise-hd{top:56px;padding:16px 20px 20px}
@@ -222,6 +258,8 @@ footer{padding:26px 0 96px;color:var(--mut)}
 </style>
 </head>
 <body>
+<video class="bgvid" autoplay muted loop playsinline poster="hero.jpg"><source src="hero.mp4" type="video/mp4"></video>
+<div class="bgshade"></div><div class="bggrid"></div>
 <div class="grain"></div>
 
 <header>
@@ -235,9 +273,6 @@ footer{padding:26px 0 96px;color:var(--mut)}
 </header>
 
 <section class="hero">
-  <div class="hero-media">
-    <video id="hv" autoplay muted loop playsinline poster="hero.jpg"><source src="hero.mp4" type="video/mp4"></video>
-  </div>
   <div class="wrap">
     <div class="kick"><b>Краснодар · Юг России</b><b>Дилер Comansa</b><b>с 2008 года</b></div>
     <h1>Башенные краны <em>под ключ</em></h1>
@@ -247,19 +282,6 @@ footer{padding:26px 0 96px;color:var(--mut)}
       <a class="btn btn-o" onclick="ym(110914321,'reachGoal','wa')" href="https://wa.me/79181917531?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%9D%D0%9E%D0%92%D0%9E%D0%9A%D0%A0%D0%90%D0%9D.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D0%BE%20%D1%86%D0%B5%D0%BD%D0%B0%D0%BC%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D1%8E.">Написать в WhatsApp</a>
     </div>
     <div class="specline"><div class="fact"><b>14 лет</b><span>на рынке Юга России</span></div><div class="fact"><b>200+</b><span>монтажей и демонтажей</span></div><div class="fact"><b>до 65 м</b><span>вылет стрелы</span></div><div class="fact"><b>8 т</b><span>грузоподъёмность</span></div></div>
-  </div>
-</section>
-
-<section class="rise" id="rise" style="padding:0;border:none">
-  <div class="rise-stick">
-    <canvas id="rc"></canvas>
-    <div class="rise-shade"></div><div class="rise-vign"></div>
-    <div class="wrap rise-hd">
-      <div class="mono">[ 01 ] Высота и вылет</div>
-      <h2>Поднимаемся вместе с вашим объектом</h2>
-    </div>
-    <div class="marks"><div class="mark" data-at="0.1" style="top:26%"><b>51,6 м</b><span>свободностоящий кран</span></div><div class="mark" data-at="0.42" style="top:44%"><b>65 м</b><span>максимальный вылет стрелы</span></div><div class="mark" data-at="0.72" style="top:62%"><b>240 м</b><span>с креплением к зданию</span></div></div>
-    <div class="rise-prog"><i id="rp"></i></div>
   </div>
 </section>
 
@@ -299,7 +321,7 @@ footer{padding:26px 0 96px;color:var(--mut)}
     <div class="mono">[ 05 ] Заказчики</div>
     <div class="sec-h"><h2>С нами работают застройщики Юга</h2></div>
     <p class="sec-sub">14 лет постоянного сотрудничества с ведущими девелоперами Краснодара, края и Ростова.</p>
-    <div class="brands"><span class="brand">Догма</span><span class="brand">ССК</span><span class="brand">Инсити</span><span class="brand">ОБД-Инвест</span><span class="brand">ОБД СМУ №1</span><span class="brand">Семья</span><span class="brand">АВА Групп</span><span class="brand">Девелопмент-Юг</span><span class="brand">Дар-Строй</span><span class="brand">ГИС-АГРО</span><span class="brand">Нефтестройиндустрия</span><span class="brand">Гранд-Строй (Ростов)</span></div>
+    <div class="tape"><div class="tape-row"><span class="brand">Догма</span><span class="brand">ССК</span><span class="brand">Инсити</span><span class="brand">ОБД-Инвест</span><span class="brand">ОБД СМУ №1</span><span class="brand">Семья</span><span class="brand">АВА Групп</span><span class="brand">Девелопмент-Юг</span><span class="brand">Дар-Строй</span><span class="brand">ГИС-АГРО</span><span class="brand">Нефтестройиндустрия</span><span class="brand">Гранд-Строй (Ростов)</span><span class="brand">Догма</span><span class="brand">ССК</span><span class="brand">Инсити</span><span class="brand">ОБД-Инвест</span><span class="brand">ОБД СМУ №1</span><span class="brand">Семья</span><span class="brand">АВА Групп</span><span class="brand">Девелопмент-Юг</span><span class="brand">Дар-Строй</span><span class="brand">ГИС-АГРО</span><span class="brand">Нефтестройиндустрия</span><span class="brand">Гранд-Строй (Ростов)</span></div></div>
   </div>
 </section>
 
@@ -311,9 +333,22 @@ footer{padding:26px 0 96px;color:var(--mut)}
   </div>
 </section>
 
+<section class="rise" id="rise" style="padding:0">
+  <div class="rise-stick">
+    <canvas id="rc"></canvas>
+    <div class="rise-shade"></div><div class="rise-vign"></div>
+    <div class="rise-hd">
+      <div class="mono">[ 07 ] Высота и вылет</div>
+      <h2>Поднимаемся вместе с вашим объектом</h2>
+    </div>
+    <div class="marks"><div class="mark" data-at="0.1" style="top:26%"><b>51,6 м</b><span>свободностоящий кран</span></div><div class="mark" data-at="0.42" style="top:44%"><b>65 м</b><span>максимальный вылет стрелы</span></div><div class="mark" data-at="0.72" style="top:62%"><b>240 м</b><span>с креплением к зданию</span></div></div>
+    <div class="rise-prog"><i id="rp"></i></div>
+  </div>
+</section>
+
 <section id="contacts">
   <div class="wrap reveal">
-    <div class="mono">[ 07 ] Контакты</div>
+    <div class="mono">[ 08 ] Контакты</div>
     <div class="sec-h"><h2>Связаться</h2></div>
     <div class="cgrid">
       <div>
@@ -405,12 +440,12 @@ addEventListener('load',()=>{
     `вес: ${(bytes/1048576).toFixed(2)} мб | загрузка: ${ms} мс`;
 });
 
-/* ── на экономии трафика видео не грузим, остаётся постер ──────────────── */
+/* ── на экономии трафика фоновое видео не грузим, остаётся кадр ────────── */
 (function(){
   const c=navigator.connection;
   if(c&&(c.saveData||/2g/.test(c.effectiveType||''))){
-    const v=document.getElementById('hv');
-    if(v){const img=new Image();img.src='hero.jpg';img.className='';v.replaceWith(img)}
+    const v=document.querySelector('.bgvid');
+    if(v){const im=new Image();im.src='hero.jpg';im.className='bgvid';v.replaceWith(im)}
   }
 })();
 </script>
