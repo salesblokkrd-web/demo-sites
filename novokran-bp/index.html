@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>НОВОКРАН — Аренда башенных кранов и подъёмников в Краснодаре</title>
+<meta name="description" content="НОВОКРАН: Аренда башенных кранов и подъёмников в Краснодаре. Краснодар. +7 (861) 267-27-47.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="НОВОКРАН — Аренда башенных кранов и подъёмников в Краснодаре">
+<meta property="og:description" content="Аренда башенных кранов Comansa и Liebherr в Краснодаре с оператором. Монтаж, демонтаж, сервис, ППР. 14 лет, 200+ объектов. Официальный дилер Comansa.">
+<meta property="og:image" content="https://salesblokkrd-web.github.io/demo-sites/novokran-bp/hero.jpg">
+<meta property="og:url" content="https://salesblokkrd-web.github.io/demo-sites/novokran-bp/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏗️</text></svg>">
+<link rel="preload" as="image" fetchpriority="high" href="hero.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"НОВОКРАН","telephone":"+78612672747","address":{"@type":"PostalAddress","addressLocality":"Краснодар","streetAddress":"г. Краснодар, ул. Московская, 59/1"},"openingHours":"Пн–Пт 8:00–17:00"}</script>
+<script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(110914321,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});</script>
+<style>
+/* ── шрифты: самохост, кириллица отдельным subset'ом ───────────────────── */
+@font-face{font-family:'Onest';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url('Onest-cyr.woff2') format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Onest';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url('Onest-lat.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+2000-206F,U+2122,U+2191,U+2193,U+2212}
+@font-face{font-family:'JBMono';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url('JetBrainsMono-cyr.woff2') format('woff2');
+  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'JBMono';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url('JetBrainsMono-lat.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+2212}
+
+:root{
+  --acc:#2fb6bd;
+  --bg:#0b1420; --bg2:#0d1826; --txt:#e8eef5; --mut:#8fa0b4;
+  --line:rgba(120,180,255,.14); --line-thin:rgba(120,180,255,.07);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Onest',system-ui,sans-serif;color:var(--txt);line-height:1.6;
+  background-color:var(--bg);
+  /* миллиметровка: тонкая сетка 16px + толстая 80px, 0 КБ картинок */
+  background-image:
+    linear-gradient(var(--line-thin) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line-thin) 1px,transparent 1px),
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:16px 16px,16px 16px,80px 80px,80px 80px;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.mono{font-family:'JBMono',ui-monospace,monospace;text-transform:uppercase;
+  letter-spacing:.12em;font-size:.72rem;color:var(--mut)}
+.br{color:var(--acc)}
+
+/* ── шапка ─────────────────────────────────────────────────────────────── */
+header{position:sticky;top:0;z-index:60;background:rgba(11,20,32,.9);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:26px;height:62px}
+.logo{font-weight:800;font-size:1.05rem;letter-spacing:-.02em}
+.logo span{color:var(--acc)}
+.nav-links{display:flex;gap:22px;margin-left:auto}
+.nav-links a:hover{color:var(--txt)}
+.nav-phone{font-family:'JBMono',monospace;font-weight:700;font-size:.92rem;white-space:nowrap}
+
+/* ── герой ─────────────────────────────────────────────────────────────── */
+.hero{position:relative;min-height:92svh;display:flex;align-items:flex-end;
+  overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;
+  filter:contrast(1.12) saturate(.84) brightness(.9)}
+/* дуотон: тени уходят в синий, света — в акцент */
+.hero-media::before{content:"";position:absolute;inset:0;background:#0a1a2e;mix-blend-mode:lighten;opacity:.55}
+.hero-media::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(11,20,32,.25) 0%,rgba(11,20,32,.55) 55%,var(--bg) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:54px;padding-top:120px}
+.kick{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.kick b{font-family:'JBMono',monospace;font-weight:600;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:#eafcfd;background:rgba(7,15,24,.72);backdrop-filter:blur(4px);
+  border:1px solid var(--acc);border-radius:2px;padding:6px 11px}
+h1{font-size:clamp(2.6rem,8.4vw,7.2rem);line-height:.92;letter-spacing:-.035em;
+  font-weight:800;text-wrap:balance;max-width:15ch}
+h1 em{font-style:normal;color:var(--acc)}
+.lead{margin:24px 0 30px;font-size:clamp(1rem,1.5vw,1.18rem);color:#c3cede;max-width:56ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 28px;font-weight:700;font-size:.95rem;
+  border:1px solid var(--acc);border-radius:3px;transition:.2s}
+.btn-a{background:var(--acc);color:#06131c}
+.btn-a:hover{filter:brightness(1.12)}
+.btn-o{color:var(--acc)}
+.btn-o:hover{background:rgba(18,168,173,.12)}
+.specline{display:flex;flex-wrap:wrap;gap:0;margin-top:46px;border-top:1px solid var(--line)}
+.specline div{flex:1 1 150px;padding:16px 18px 14px 0;border-right:1px solid var(--line)}
+.specline div:last-child{border-right:none}
+.specline b{display:block;font-family:'JBMono',monospace;font-size:clamp(1.3rem,2.4vw,1.9rem);
+  font-weight:700;color:var(--txt);letter-spacing:-.02em}
+.specline span{font-family:'JBMono',monospace;font-size:.68rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--mut)}
+
+/* ── секция-секвенция: подъём по скроллу ───────────────────────────────── */
+.rise{position:relative;height:420vh}
+.rise-stick{position:sticky;top:0;height:100svh;overflow:hidden}
+.rise canvas{width:100%;height:100%;display:block;filter:contrast(1.1) saturate(.86)}
+.rise-shade{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(7,13,21,.82) 0%,rgba(7,13,21,.42) 42%,transparent 68%)}
+.rise-vign{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at center,transparent 38%,rgba(0,0,0,.5) 100%)}
+.rise-hd{position:absolute;left:0;right:0;top:62px;padding:22px 24px 26px;z-index:3}
+.rise-hd h2{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;letter-spacing:-.02em;
+  text-shadow:0 2px 24px rgba(0,0,0,.6);margin-top:6px}
+.rise-hd .mono{color:var(--acc)}
+.marks{position:absolute;inset:0;z-index:3;pointer-events:none}
+.mark{position:absolute;left:24px;opacity:0;transform:translateX(-16px);
+  transition:opacity .45s,transform .45s;border-left:2px solid var(--acc);padding:2px 0 2px 16px}
+.mark.on{opacity:1;transform:none}
+.mark b{display:block;font-family:'JBMono',monospace;font-size:clamp(1.8rem,4.6vw,3.2rem);
+  font-weight:700;color:var(--acc);line-height:1;letter-spacing:-.03em}
+.mark span{font-family:'JBMono',monospace;font-size:.7rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#cbd6e3}
+.rise-prog{position:absolute;right:24px;top:50%;transform:translateY(-50%);z-index:3;
+  width:1px;height:44vh;background:var(--line)}
+.rise-prog i{position:absolute;left:-1px;top:0;width:3px;background:var(--acc);height:0}
+
+/* ── общие секции ──────────────────────────────────────────────────────── */
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+.sec-h{display:flex;align-items:baseline;gap:16px;margin-bottom:12px}
+.sec-h h2{font-size:clamp(1.6rem,3.4vw,2.6rem);font-weight:800;letter-spacing:-.03em}
+.sec-sub{color:var(--mut);max-width:62ch;margin-bottom:38px}
+
+/* спецификация парка */
+.spec{width:100%;border-collapse:collapse;font-size:.95rem}
+.spec th{font-family:'JBMono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--mut);text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--line);font-weight:500}
+.spec td{padding:16px 16px 16px 0;border-bottom:1px solid var(--line-thin);vertical-align:baseline}
+.spec tr:hover td{background:rgba(120,180,255,.04)}
+.spec .n{font-family:'JBMono',monospace;color:var(--mut);font-size:.72rem;white-space:nowrap}
+.spec .m{font-weight:700;white-space:nowrap}
+.spec .t{font-family:'JBMono',monospace;font-size:.82rem;color:#b7c4d4}
+.spec .p{font-family:'JBMono',monospace;font-weight:700;color:var(--acc);white-space:nowrap;text-align:right}
+.note{color:var(--mut);font-size:.88rem;margin-top:18px;max-width:70ch}
+
+/* карточки услуг */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.card{background:var(--bg);padding:0 0 26px;transition:.25s}
+.card:hover{background:var(--bg2)}
+.card .ph{width:100%;height:180px;object-fit:cover;display:block;
+  filter:contrast(1.08) saturate(.8) brightness(.92)}
+.card h3{font-size:1.02rem;margin:20px 24px 8px;letter-spacing:-.01em}
+.card p{color:var(--mut);font-size:.92rem;margin:0 24px}
+
+/* объекты и партнёры — те же классы, что генерит build.py */
+.objs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.obj{background:var(--bg);padding:26px 24px;transition:.2s}
+.obj:hover{background:var(--bg2)}
+.obj .when{font-family:'JBMono',monospace;font-size:.68rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--acc)}
+.obj b{display:block;margin:8px 0 6px;font-size:1.02rem}
+.obj p{color:var(--mut);font-size:.9rem}
+.brands{display:flex;flex-wrap:wrap;gap:10px}
+.brand{font-family:'JBMono',monospace;font-size:.8rem;letter-spacing:.04em;
+  border:1px solid var(--line);border-radius:2px;padding:11px 16px;color:#cad5e2}
+
+/* шаги */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);counter-reset:st}
+.step{background:var(--bg);padding:28px 24px}
+.step::before{counter-increment:st;content:"[ 0" counter(st) " ]";display:block;
+  font-family:'JBMono',monospace;font-size:.7rem;letter-spacing:.12em;color:var(--acc);margin-bottom:14px}
+.step h3{font-size:1rem;margin-bottom:6px}
+.step p{color:var(--mut);font-size:.9rem}
+
+/* контакты */
+.cgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
+.crow{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--line-thin)}
+.crow .l{font-family:'JBMono',monospace;font-size:.68rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--mut);min-width:104px;padding-top:4px}
+.crow .v{font-weight:600}
+.crow .v.big{font-family:'JBMono',monospace;font-size:1.5rem;font-weight:700;letter-spacing:-.02em}
+.cbox{border:1px solid var(--acc);padding:30px 26px}
+.cbox b{font-size:1.08rem}
+.cbox p{color:var(--mut);font-size:.92rem;margin:8px 0 20px}
+.cbox .btn{width:100%;text-align:center;margin-bottom:10px}
+
+footer{padding:26px 0 96px;color:var(--mut)}
+.fgrid{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.telem{font-family:'JBMono',monospace;font-size:.68rem;letter-spacing:.08em;color:var(--mut)}
+
+/* плёночное зерно поверх всего */
+.grain{position:fixed;inset:-50%;z-index:70;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:gr 8s steps(10) infinite;will-change:transform}
+@keyframes gr{0%,100%{transform:translate(0,0)}20%{transform:translate(-3%,-4%)}
+  40%{transform:translate(2%,-6%)}60%{transform:translate(-4%,3%)}80%{transform:translate(4%,2%)}}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:65;display:none;gap:8px;
+  padding:10px 12px;background:rgba(9,16,26,.95);border-top:1px solid var(--line)}
+.sticky-cta .btn{flex:1;padding:13px;font-size:.9rem}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.reveal.on{opacity:1;transform:none}
+
+@media(max-width:860px){
+  .nav-links{display:none}
+  .cgrid{grid-template-columns:1fr;gap:32px}
+  section{padding:56px 0}
+  .sticky-cta{display:flex}
+  .rise{height:340vh}
+  .rise-hd{top:56px;padding:16px 20px 20px}
+  .rise-hd h2{font-size:1.32rem;max-width:14ch}
+  .mark{left:20px;max-width:74vw}
+  .mark b{font-size:2rem}
+  .rise-prog{right:14px;height:34vh}
+  .specline div{flex:1 1 45%;border-right:none}
+  .hero .wrap{padding-bottom:38px}
+}
+@media(prefers-reduced-motion:reduce){
+  .grain{animation:none}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">НОВО<span>КРАН</span></div>
+    <nav class="nav-links mono">
+      <a href="#park">[ Парк ]</a><a href="#objects">[ Объекты ]</a><a href="#contacts">[ Контакты ]</a>
+    </nav>
+    <a class="nav-phone" onclick="ym(110914321,'reachGoal','call')" href="tel:+78612672747">+7 (861) 267-27-47</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-media">
+    <video id="hv" autoplay muted loop playsinline poster="hero.jpg"><source src="hero.mp4" type="video/mp4"></video>
+  </div>
+  <div class="wrap">
+    <div class="kick"><b>Краснодар · Юг России</b><b>Дилер Comansa</b><b>с 2008 года</b></div>
+    <h1>Башенные краны <em>под ключ</em></h1>
+    <p class="lead">Официальный дилер Comansa и Scanclimber на юге России. Подбор крана, ППР, монтаж, аттестованный оператор и сервис — в одних руках. 14 лет, 200+ монтажей на объектах Краснодара, Сочи, Ростова и Адыгеи.</p>
+    <div class="cta">
+      <a class="btn btn-a" onclick="ym(110914321,'reachGoal','call')" href="tel:+78612672747">Позвонить: +7 (861) 267-27-47</a>
+      <a class="btn btn-o" onclick="ym(110914321,'reachGoal','wa')" href="https://wa.me/79181917531?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%9D%D0%9E%D0%92%D0%9E%D0%9A%D0%A0%D0%90%D0%9D.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D0%BE%20%D1%86%D0%B5%D0%BD%D0%B0%D0%BC%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D1%8E.">Написать в WhatsApp</a>
+    </div>
+    <div class="specline"><div class="fact"><b>14 лет</b><span>на рынке Юга России</span></div><div class="fact"><b>200+</b><span>монтажей и демонтажей</span></div><div class="fact"><b>до 65 м</b><span>вылет стрелы</span></div><div class="fact"><b>8 т</b><span>грузоподъёмность</span></div></div>
+  </div>
+</section>
+
+<section class="rise" id="rise" style="padding:0;border:none">
+  <div class="rise-stick">
+    <canvas id="rc"></canvas>
+    <div class="rise-shade"></div><div class="rise-vign"></div>
+    <div class="wrap rise-hd">
+      <div class="mono">[ 01 ] Высота и вылет</div>
+      <h2>Поднимаемся вместе с вашим объектом</h2>
+    </div>
+    <div class="marks"><div class="mark" data-at="0.1" style="top:26%"><b>51,6 м</b><span>свободностоящий кран</span></div><div class="mark" data-at="0.42" style="top:44%"><b>65 м</b><span>максимальный вылет стрелы</span></div><div class="mark" data-at="0.72" style="top:62%"><b>240 м</b><span>с креплением к зданию</span></div></div>
+    <div class="rise-prog"><i id="rp"></i></div>
+  </div>
+</section>
+
+<section id="park">
+  <div class="wrap reveal">
+    <div class="mono">[ 02 ] Спецификация</div>
+    <div class="sec-h"><h2>Парк техники и цены аренды</h2></div>
+    <p class="sec-sub">Цена — за месяц аренды, кран передаётся с аттестованным оператором. Монтаж, демонтаж, перебазировка и ППР считаются отдельно под объект.</p>
+    <table class="spec">
+      <thead><tr><th></th><th>Модель</th><th>Характеристики</th><th style="text-align:right">Аренда</th></tr></thead>
+      <tbody><tr><td class="n">[ 01 ]</td><td class="m">Comansa 10LC140</td><td class="t">вылет 60 м · 8 т · высота 51,6 м (200,1 м с креплением)</td><td class="p">от 330 000 ₽/мес</td></tr><tr><td class="n">[ 02 ]</td><td class="m">Comansa 10LC150</td><td class="t">вылет 60 м · 8 т · высотное жилое строительство</td><td class="p">по запросу</td></tr><tr><td class="n">[ 03 ]</td><td class="m">Comansa 11LC150 (8t)</td><td class="t">вылет 60 м · 8 т · безоголовочный, высота до 240 м</td><td class="p">по запросу</td></tr><tr><td class="n">[ 04 ]</td><td class="m">Comansa 11CM160 (8t)</td><td class="t">вылет 65 м · 8 т · высота 57,4 м (240 м с креплением)</td><td class="p">по запросу</td></tr><tr><td class="n">[ 05 ]</td><td class="m">Comansa LC5211</td><td class="t">вылет 52,5 м · 5 т · 30 кВт, для плотной застройки</td><td class="p">от 250 000 ₽/мес</td></tr><tr><td class="n">[ 06 ]</td><td class="m">Liebherr 132EC-H8</td><td class="t">вылет 55 м · 8 т · высота 45,7 м (200,7 м с креплением)</td><td class="p">от 330 000 ₽/мес</td></tr><tr><td class="n">[ 07 ]</td><td class="m">Подъёмник ALIMAK SCANDO 450</td><td class="t">грузопассажирский, мачтовый, на фасад здания</td><td class="p">по запросу</td></tr></tbody>
+    </table>
+    <p class="note">Работаем по Краснодару, Краснодарскому краю, Адыгее, Сочи и Ростову-на-Дону. Возможна аренда нескольких кранов на один объект — так уже строились Любимово и Мега-Победа.</p>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap reveal">
+    <div class="mono">[ 03 ] Услуги</div>
+    <div class="sec-h"><h2>Полный комплекс: от подбора до демонтажа</h2></div>
+    <p class="sec-sub">Всё, что нужно застройщику по грузоподъёмному оборудованию — в одних руках, без субподрядчиков.</p>
+    <div class="grid"><div class="card"><img class="ph" src="ph-crane.jpg" alt="Аренда башенных кранов с оператором" loading="lazy"><h3>Аренда башенных кранов с оператором</h3><p>Собственный штат аттестованных крановщиков и механиков. Кран работает — вы не думаете об экипаже, ТО и допусках.</p></div><div class="card"><img class="ph" src="ph-hoist.jpg" alt="Аренда грузопассажирских подъёмников" loading="lazy"><h3>Аренда грузопассажирских подъёмников</h3><p>Мачтовые подъёмники ALIMAK SCANDO 450 и системы Scanclimber — снимают логистику людей и материалов на этажи.</p></div><div class="card"><img class="ph" src="ph-service.jpg" alt="Монтаж, демонтаж и сервис" loading="lazy"><h3>Монтаж, демонтаж и сервис</h3><p>Более 200 монтажей и демонтажей. Ремонт, гарантийное и постгарантийное обслуживание, пусконаладка, наращивание высоты.</p></div><div class="card"><img class="ph" src="ph-ppr.jpg" alt="Проектная документация ППР ПС" loading="lazy"><h3>Проектная документация ППР ПС</h3><p>ППР на эксплуатацию, монтаж и демонтаж подъёмных сооружений с учётом технических особенностей вашего объекта.</p></div><div class="card"><img class="ph" src="ph-sale.jpg" alt="Продажа кранов и подъёмников" loading="lazy"><h3>Продажа кранов и подъёмников</h3><p>Официальный дилер Comansa и Scanclimber: новая и б/у техника, подбор по грузовысотным характеристикам, поставка запчастей.</p></div></div>
+  </div>
+</section>
+
+<section id="objects">
+  <div class="wrap reveal">
+    <div class="mono">[ 04 ] Портфолио</div>
+    <div class="sec-h"><h2>Объекты, которые мы поднимали</h2></div>
+    <p class="sec-sub">Краснодар, Сочи, Ростов-на-Дону, Адыгея — жилые кварталы, которые строились на нашей технике.</p>
+    <div class="objs"><div class="obj"><span class="when">2021–2022</span><b>Микрорайон Любимово</b><p>Краснодар, ул. Кирилла Россинского. Комплексная застройка целого микрорайона, сразу 3 крана — Comansa 10LC140, 10LC150 и Liebherr 132EC-H8.</p></div><div class="obj"><span class="when">Ноябрь 2021</span><b>ЖК «Каравелла Португалии»</b><p>Сочи, п. Дагомыс. 10 тринадцатиэтажных домов — 2 крана Comansa 10LC140.</p></div><div class="obj"><span class="when">Март 2021</span><b>ЖК «Мега-Победа»</b><p>Адыгея, аул Новая Адыгея. Квартал из 7 высотных домов комфорт-класса — 2 крана Comansa 10LC140.</p></div><div class="obj"><span class="when">Декабрь 2021</span><b>ЖК «Династия»</b><p>Ростов-на-Дону, ул. Мечникова. Бизнес-класс, два дома — 2 крана Comansa 10LC140 и подъёмник Alimak SCANDO 450.</p></div><div class="obj"><span class="when">Февраль 2022</span><b>ЖК «Development-Plaza»</b><p>Краснодар, ул. 40-летия Победы. Премиум-класс — кран Comansa 10LC140 и подъёмник Alimak SCANDO 450.</p></div><div class="obj"><span class="when">Декабрь 2021</span><b>ЖК LIME</b><p>Краснодар, ул. 2-я Российская. Квартал повышенной комфортности — 2 крана Comansa 10LC140.</p></div><div class="obj"><span class="when">Апрель 2021</span><b>ЖК «Дружный»</b><p>Краснодар, ул. Адмирала Серебрякова. Комплекс из четырёх домов — 2 крана Comansa 10LC140.</p></div><div class="obj"><span class="when">2020</span><b>ЖК «Атлант» и ЖК «Альпы»</b><p>Краснодар, ул. Кирилла Россинского. Комплексы из двух и трёх литеров — краны Comansa 10LC150 и 10LC140.</p></div></div>
+  </div>
+</section>
+
+<section id="partners">
+  <div class="wrap reveal">
+    <div class="mono">[ 05 ] Заказчики</div>
+    <div class="sec-h"><h2>С нами работают застройщики Юга</h2></div>
+    <p class="sec-sub">14 лет постоянного сотрудничества с ведущими девелоперами Краснодара, края и Ростова.</p>
+    <div class="brands"><span class="brand">Догма</span><span class="brand">ССК</span><span class="brand">Инсити</span><span class="brand">ОБД-Инвест</span><span class="brand">ОБД СМУ №1</span><span class="brand">Семья</span><span class="brand">АВА Групп</span><span class="brand">Девелопмент-Юг</span><span class="brand">Дар-Строй</span><span class="brand">ГИС-АГРО</span><span class="brand">Нефтестройиндустрия</span><span class="brand">Гранд-Строй (Ростов)</span></div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap reveal">
+    <div class="mono">[ 06 ] Порядок работы</div>
+    <div class="sec-h"><h2>Как начинается работа</h2></div>
+    <div class="steps"><div class="step"><h3>Заявка и вводные</h3><p>Этажность, пятно застройки, сроки, стеснённость площадки — этого хватит для первого расчёта.</p></div><div class="step"><h3>Подбор крана и ППР</h3><p>Подберём модель по грузовысотным характеристикам и подготовим проектную документацию на эксплуатацию и монтаж.</p></div><div class="step"><h3>Монтаж и пусконаладка</h3><p>Своя бригада и аттестованные специалисты, регистрация в Ростехнадзоре, ввод в эксплуатацию.</p></div><div class="step"><h3>Работа и сервис</h3><p>Оператор, плановое ТО, ремонт и наращивание высоты — на нас. Демонтаж и перебазировка по окончании.</p></div></div>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap reveal">
+    <div class="mono">[ 07 ] Контакты</div>
+    <div class="sec-h"><h2>Связаться</h2></div>
+    <div class="cgrid">
+      <div>
+        <div class="crow"><span class="l">Телефон</span><a class="v big" onclick="ym(110914321,'reachGoal','call')" href="tel:+78612672747">+7 (861) 267-27-47</a></div>
+        <div class="crow"><span class="l">Ещё</span><a class="v" href="tel:+79181917531">+7 (918) 191-75-31</a></div>
+        <div class="crow"><span class="l">Адрес</span><span class="v">г. Краснодар, ул. Московская, 59/1</span></div>
+        <div class="crow"><span class="l">Режим</span><span class="v">Пн–Пт 8:00–17:00</span></div>
+        <p class="sec-sub" style="margin-top:24px">ООО «НОВОКРАН» — официальный дилер Comansa (Испания) и Scanclimber (Финляндия) на юге России. С 2008 года выполнено более 200 монтажей и демонтажей башенных кранов. Аренда кранов и грузопассажирских подъёмников с оператором, сервисное обслуживание, разработка ППР ПС, продажа техники и запчастей. Краснодар, край, Адыгея, Сочи, Ростов-на-Дону.</p>
+      </div>
+      <div class="cbox">
+        <b>Расчёт аренды за день</b>
+        <p>Пришлите параметры объекта — вернёмся с моделью крана, стоимостью аренды, монтажа и сроком выхода на площадку.</p>
+        <a class="btn btn-a" onclick="ym(110914321,'reachGoal','wa')" href="https://wa.me/79181917531?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%9D%D0%9E%D0%92%D0%9E%D0%9A%D0%A0%D0%90%D0%9D.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D0%BE%20%D1%86%D0%B5%D0%BD%D0%B0%D0%BC%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D1%8E.">Написать в WhatsApp</a>
+        <a class="btn btn-o" onclick="ym(110914321,'reachGoal','call')" href="tel:+78612672747">Позвонить</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fgrid">
+    <span class="telem">© 2026 НОВОКРАН · Краснодар</span>
+    <span class="telem" id="tm">[ … ]</span>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn btn-a" onclick="ym(110914321,'reachGoal','call')" href="tel:+78612672747">Позвонить</a>
+  <a class="btn btn-o" onclick="ym(110914321,'reachGoal','wa')" href="https://wa.me/79181917531?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%9D%D0%9E%D0%92%D0%9E%D0%9A%D0%A0%D0%90%D0%9D.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D0%BE%20%D1%86%D0%B5%D0%BD%D0%B0%D0%BC%20%D0%B8%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D1%8E.">WhatsApp</a>
+</div>
+
+<script>
+/* ── появление секций ──────────────────────────────────────────────────── */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ── подъём по скроллу: кадры листаются прокруткой ─────────────────────── */
+(function(){
+  const mob=matchMedia('(max-width:860px)').matches;
+  const DIR=mob?'seq-m/':'seq/', N=mob?30:60;
+  const cv=document.getElementById('rc'), ctx=cv.getContext('2d',{alpha:false});
+  const scene=document.getElementById('rise'), prog=document.getElementById('rp');
+  const marks=[...document.querySelectorAll('.mark')];
+  const imgs=[]; let cur=-1, ready=false;
+  const pad=n=>String(n).padStart(3,'0');
+  /* держим обычные <img>: браузер сам управляет декодированными данными.
+     ImageBitmap здесь недопустим — 60 кадров съели бы сотни МБ и убили вкладку на iOS */
+  for(let i=1;i<=N;i++){const im=new Image();im.src=DIR+'f'+pad(i)+'.webp';
+    im.onload=()=>{if(!ready){ready=true;fit()}};imgs.push(im)}
+  function fit(){
+    const dpr=Math.min(devicePixelRatio||1,2);
+    cv.width=Math.round(innerWidth*dpr);cv.height=Math.round(innerHeight*dpr);
+    draw(cur<0?0:cur,true);
+  }
+  function draw(i,force){
+    if((i===cur&&!force))return;
+    const im=imgs[i]; if(!im||!im.complete||!im.naturalWidth)return; cur=i;
+    const cw=cv.width,ch=cv.height,ir=im.naturalWidth/im.naturalHeight,cr=cw/ch;
+    let w,h; if(ir>cr){h=ch;w=ch*ir}else{w=cw;h=cw/ir}
+    ctx.drawImage(im,(cw-w)/2,(ch-h)/2,w,h);
+  }
+  let tick=false;
+  function onScroll(){
+    if(tick)return;tick=true;
+    requestAnimationFrame(()=>{
+      const r=scene.getBoundingClientRect();
+      const p=Math.min(Math.max(-r.top/(r.height-innerHeight),0),1);
+      draw(Math.min(N-1,Math.round(p*(N-1))));
+      prog.style.height=(p*100)+'%';
+      marks.forEach(m=>m.classList.toggle('on',p>=+m.dataset.at));
+      tick=false;
+    });
+  }
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',fit);
+  fit();onScroll();
+})();
+
+/* ── телеметрия страницы в подвале ─────────────────────────────────────── */
+addEventListener('load',()=>{
+  let bytes=0;
+  performance.getEntriesByType('resource').forEach(r=>bytes+=(r.transferSize||0));
+  const nav=performance.getEntriesByType('navigation')[0];
+  bytes+=nav&&nav.transferSize?nav.transferSize:0;
+  const ms=nav?Math.round(nav.domContentLoadedEventEnd):0;
+  const d=new Date(),p=n=>String(n).padStart(2,'0');
+  document.getElementById('tm').textContent=
+    `[ ${p(d.getDate())}/${p(d.getMonth()+1)}/${String(d.getFullYear()).slice(2)} ] `+
+    `вес: ${(bytes/1048576).toFixed(2)} мб | загрузка: ${ms} мс`;
+});
+
+/* ── на экономии трафика видео не грузим, остаётся постер ──────────────── */
+(function(){
+  const c=navigator.connection;
+  if(c&&(c.saveData||/2g/.test(c.effectiveType||''))){
+    const v=document.getElementById('hv');
+    if(v){const img=new Image();img.src='hero.jpg';img.className='';v.replaceWith(img)}
+  }
+})();
+</script>
+</body>
+</html>
