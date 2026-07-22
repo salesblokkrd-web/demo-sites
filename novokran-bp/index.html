@@ -93,10 +93,11 @@ header{position:sticky;top:0;z-index:60;background:rgba(11,20,32,.9);
 .hero .wrap{position:relative;z-index:2;padding:120px 24px 54px;
   background:none;backdrop-filter:none;border:none}
 .hero .wrap::before,.hero .wrap::after{display:none}
-.kick{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
-.kick b{font-family:'JBMono',monospace;font-weight:600;font-size:.72rem;letter-spacing:.14em;
-  text-transform:uppercase;color:#eafcfd;background:rgba(7,15,24,.72);backdrop-filter:blur(4px);
-  border:1px solid var(--acc);border-radius:2px;padding:6px 11px}
+.kick{display:flex;gap:0;flex-wrap:wrap;align-items:center;margin-bottom:26px}
+.kick b{font-family:'Onest',sans-serif;font-weight:500;font-size:clamp(.92rem,1.15vw,1.05rem);
+  letter-spacing:.005em;color:rgba(255,255,255,.86);text-shadow:0 2px 14px rgba(0,0,0,.65)}
+.kick b + b::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;
+  background:var(--acc);margin:0 14px;vertical-align:middle}
 h1{font-size:clamp(2.6rem,8.4vw,7.2rem);line-height:.92;letter-spacing:-.035em;
   font-weight:800;text-wrap:balance;max-width:15ch}
 h1 em{font-style:normal;color:var(--acc)}
@@ -261,6 +262,10 @@ footer{padding:26px 0 96px;color:var(--mut)}
   .lg{width:158px;height:80px}
   .sticky-cta{display:flex}
   .rise{height:340vh}
+  /* на узком экране строка ломается и точки уезжают в начало — оставляем главное */
+  .kick b{display:none}
+  .kick b:nth-child(2){display:inline;font-size:.95rem}
+  .kick b + b::before{display:none}
   .rise-hd{top:56px;padding:16px 20px 20px}
   .rise-hd h2{font-size:1.32rem;max-width:14ch}
   .mark{left:20px;max-width:74vw}
@@ -293,7 +298,7 @@ footer{padding:26px 0 96px;color:var(--mut)}
 
 <section class="hero">
   <div class="wrap">
-    <div class="kick"><b>Краснодар · Юг России</b><b>Дилер Comansa</b><b>с 2008 года</b></div>
+    <div class="kick"><b>Краснодар и Юг России</b><b>Официальный дилер Comansa</b><b>с 2008 года</b></div>
     <h1>Башенные краны <em>под ключ</em></h1>
     <p class="lead">Официальный дилер Comansa и Scanclimber на юге России. Подбор крана, ППР, монтаж, аттестованный оператор и сервис — в одних руках. 14 лет, 200+ монтажей на объектах Краснодара, Сочи, Ростова и Адыгеи.</p>
     <div class="cta">
